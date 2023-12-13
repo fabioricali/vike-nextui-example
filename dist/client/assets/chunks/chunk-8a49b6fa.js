@@ -1,0 +1,1 @@
+import{P as s,j as r}from"./chunk-7146c98e.js";function a({children:p}){return r.jsx("ul",{className:"grid gap-x-8 gap-y-6 sm:gap-y-4 p-6 sm:p-0",children:p})}a.propTypes={children:s.array};export{a as L};

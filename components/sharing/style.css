@@ -1,0 +1,3 @@
+.share-tabs > [data-slot="tabList"] {
+    display: block;
+}

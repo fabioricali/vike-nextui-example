@@ -1,0 +1,121 @@
+/* This CSS is common to all pages */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+    --text-black: #121212;
+    --text-gray: #5D687A;
+
+    --chart-color-earone: #00A3FD;
+    --chart-color-italiani: #08D16D;
+    --chart-color-stranieri: #FF6A75;
+    --chart-color-generi: #768BF7;
+    --chart-color-dance: #6B42C6;
+    --chart-color-urban: #B500CE;
+    --chart-color-rock: #DC2C85;
+    --chart-color-latin: #FF7ABD;
+    --chart-color-tv: #FF9D41;
+    --chart-color-indipendenti: #02C1CB;
+    --chart-color-sanremo: #0A05A0;
+}
+
+#page-loader {
+    background: rgba(0, 0, 0, .9);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide {
+    display: none!important;
+}
+
+.loader {
+    width: 100%;
+    height: 4.8px;
+    display: inline-block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+.loader::after {
+    content: '';
+    width: 192px;
+    height: 4.8px;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+    0% {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        left: 100%;
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes animFw {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes coli1 {
+    0% {
+        transform: rotate(-45deg) translateX(0px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotate(-45deg) translateX(-45px);
+        opacity: 0;
+    }
+}
+
+@keyframes coli2 {
+    0% {
+        transform: rotate(45deg) translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateX(-45px);
+        opacity: 0.7;
+    }
+}
+
+/*body {*/
+/*  margin: 0;*/
+/*  font-family: sans-serif;*/
+/*}*/
+/** {*/
+/*  box-sizing: border-box;*/
+/*}*/
+/*a {*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.navitem {*/
+/*  padding: 3px 10px;*/
+/*}*/
+/*.navitem.is-active {*/
+/*  background-color: #eee;*/
+/*}*/
