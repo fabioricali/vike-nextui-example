@@ -48,22 +48,8 @@ async function startServer() {
     // Vike middleware. It should always be our last middleware (because it's a
     // catch-all middleware superseding any middleware placed after it).
     app.get('*', async (req, res, next) => {
-        let language = 'en'
-        const acceptsLanguages =  req.acceptsLanguages()
-
-        if (acceptsLanguages && acceptsLanguages[0]) {
-            if(acceptsLanguages[0].startsWith('it')){
-                language = 'it'
-            }
-            if(acceptsLanguages[0].startsWith('en')){
-                language = 'en'
-            }
-        }
-
         const pageContextInit = {
             urlOriginal: req.originalUrl,
-            acceptsLanguages: req.acceptsLanguages(),
-            locale: language
         }
         const pageContext = await renderPage(pageContextInit)
         const {httpResponse} = pageContext

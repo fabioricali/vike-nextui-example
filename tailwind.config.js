@@ -2,17 +2,7 @@
 const { nextui } = require("@nextui-org/react")
 const typographyPlugin = require('@tailwindcss/typography')
 const defaultTheme = require('tailwindcss/defaultTheme')
-// const defaultColors = require('tailwindcss/colors')
 
-// const colors = {
-//   ...defaultColors,
-//   ... {
-//     //custom
-//     inonda: '#f5b316',
-//     base: 'rgb(255,255,255)'
-//   }
-// }
-// console.log(colors);
 export default {
   content: [
     "./index.html",

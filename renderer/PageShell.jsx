@@ -1,12 +1,10 @@
 import React from 'react'
-import { navigate } from 'vike/client/router'
+import {navigate} from 'vike/client/router'
 import PropTypes from 'prop-types'
 import './PageShell.css'
 import {NextUIProvider} from '@nextui-org/react'
 import {PageContextProvider} from './usePageContext'
 import {childrenPropType} from './PropTypeValues'
-import Navbar from "../components/Navbar2.jsx";
-import {PageBackdropProvider} from "../components/pageBackdrop/PageBackdropProvider.jsx";
 
 PageShell.propTypes = {
     pageContext: PropTypes.any,
@@ -20,12 +18,9 @@ function PageShell({pageContext, children}) {
             {/* See https://nextui.org/docs/guide/routing */}
             <NextUIProvider navigate={navigate}>
                 <PageContextProvider pageContext={pageContext}>
-                        <PageBackdropProvider>
-                            <Layout>
-                                <Navbar/>
-                                <Content>{children}</Content>
-                            </Layout>
-                        </PageBackdropProvider>
+                    <Layout>
+                        <Content>{children}</Content>
+                    </Layout>
                 </PageContextProvider>
             </NextUIProvider>
         </React.StrictMode>

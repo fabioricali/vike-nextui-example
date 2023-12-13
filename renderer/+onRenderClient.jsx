@@ -1,14 +1,11 @@
 import {hydrateRoot, createRoot} from 'react-dom/client'
 import {PageShell} from './PageShell'
-import {getPageMetaTags} from './getPageMetaTags.js'
-import {initLocale} from "./i18n.js";
 
 // This render() hook only supports SSR, see https://vike.dev/render-modes for how to modify render() to support SPA
 
 let root;
 async function onRenderClient(pageContext) {
     const {Page, pageProps, isHydration, locale} = pageContext
-    await initLocale(locale)
     if (!Page) throw new Error('Client-side render() hook expects pageContext.Page to be defined')
 
     const page = (
@@ -34,8 +31,6 @@ async function onRenderClient(pageContext) {
         }
         root.render(page)
     }
-
-    document.title = getPageMetaTags(pageContext).title;
 }
 
 function onHydrationEnd() {
